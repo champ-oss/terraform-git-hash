@@ -1,7 +1,7 @@
 variable "path" {
   description = "Location of a directory containing a .git folder"
   type        = string
-  default     = path.root
+  default     = null
 }
 
 variable "fallback" {
