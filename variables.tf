@@ -13,5 +13,5 @@ variable "fallback" {
 variable "enabled" {
   description = "enable the module"
   type        = bool
-  default     = false
+  default     = true
 }
