@@ -9,3 +9,9 @@ variable "fallback" {
   type        = string
   default     = "latest"
 }
+
+variable "enabled" {
+  description = "enable the module"
+  type        = bool
+  default     = true
+}
