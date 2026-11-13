@@ -30,3 +30,4 @@ output "tree_hash" {
   description = "SHA1 git tree hash of the targeted repository's HEAD commit. Identical for commits with identical files."
   value       = module.this.tree_hash
 }
+
