@@ -12,7 +12,7 @@ data "external" "tree_hash" {
 
   program = [
     "sh", "-c",
-    "h=$(git -C \"$1\" rev-parse 'HEAD^{tree}' 2>/dev/null) || h=\"$2\"; printf '{\"tree_hash\":\"%s\"}' \"$h\"",
-    "sh", local.path, var.fallback,
+    "if h=$(git -C \"$1\" rev-parse 'HEAD^{tree}' 2>/dev/null); then printf '{\"tree_hash\":\"%s\"}' \"$h\"; else printf '%s' \"$2\"; fi",
+    "sh", local.path, jsonencode({ tree_hash = var.fallback }),
   ]
 }
