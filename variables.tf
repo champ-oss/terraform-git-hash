@@ -9,3 +9,9 @@ variable "fallback" {
   type        = string
   default     = "latest"
 }
+
+variable "enable_tree_hash" {
+  description = "Run git to look up the tree hash"
+  type        = bool
+  default     = false
+}

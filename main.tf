@@ -6,3 +6,13 @@ locals {
   last_line_tokens = fileexists(local.git_log_path) ? split(" ", local.last_line) : []
   hash             = fileexists(local.git_log_path) ? local.last_line_tokens[1] : var.fallback
 }
+
+data "external" "tree_hash" {
+  count = var.enable_tree_hash ? 1 : 0
+
+  program = [
+    "sh", "-c",
+    "if h=$(git -C \"$1\" rev-parse 'HEAD^{tree}' 2>/dev/null); then printf '{\"tree_hash\":\"%s\"}' \"$h\"; else printf '%s' \"$2\"; fi",
+    "sh", local.path, jsonencode({ tree_hash = var.fallback }),
+  ]
+}
