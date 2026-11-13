@@ -28,7 +28,7 @@ No modules.
 
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
-| <a name="input_enable_tree_hash"></a> [enable\_tree\_hash](#input\_enable\_tree\_hash) | Run git to look up the tree hash | `bool` | `true` | no |
+| <a name="input_enable_tree_hash"></a> [enable\_tree\_hash](#input\_enable\_tree\_hash) | Run git to look up the tree hash | `bool` | `false` | no |
 | <a name="input_fallback"></a> [fallback](#input\_fallback) | Value to return if a git log does not exist | `string` | `"latest"` | no |
 | <a name="input_path"></a> [path](#input\_path) | Location of a directory containing a .git folder | `string` | `null` | no |
 
