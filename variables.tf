@@ -13,5 +13,5 @@ variable "fallback" {
 variable "enable_tree_hash" {
   description = "Run git to look up the tree hash"
   type        = bool
-  default     = true
+  default     = false
 }
